@@ -31,7 +31,8 @@ if(message.content.startsWith(prefix + "profile")) {
     var embed = new Discord.MessageEmbed()
     .setAuthor(profile.data.name, ('http://ddragon.leagueoflegends.com/cdn/11.4.1/img/profileicon/'+ profile.data.profileIconId + '.png'))   
     .setThumbnail('http://ddragon.leagueoflegends.com/cdn/11.4.1/img/profileicon/'+ profile.data.profileIconId + '.png')
-    .addField("Niveau d'invocateur", `${profile.data.summonerLevel}`)
+    .addField("Niveau d'invocateur", profile.data.summonerLevel)
+    .addField("Identifiant du compte", profile.data.id)
     .setColor("RED")
     message.channel.send(embed)
     }
